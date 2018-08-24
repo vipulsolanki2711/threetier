@@ -5,8 +5,8 @@
       ec2_group:
         name: dbsg
         description: an example EC2 group
-        vpc_id: vpc-0740fbc1e2835ce92
-        region: us-east-1
+        vpc_id: vpc-0fd3657021bf65833
+        region: us-west-2
         rules:
           - proto: tcp
             from_port: 3306
@@ -17,12 +17,12 @@
         var: dbsg
     - rds_subnet_group:
         state: present
-        region: us-east-1
+        region: us-west-2
         name: dbsubnet
         description: My Fancy Ex Parrot Subnet Group
         subnets:
-          - subnet-0b0503a79298a8c76
-          - subnet-0152167653eedc3a0
+          - subnet-090b6a4817c4ead81
+          - subnet-0d254e98610e5a8ce
       register: dbsubnet
     - debug:
         var: dbsubnet
